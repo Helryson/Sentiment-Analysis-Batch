@@ -2,7 +2,6 @@ from config.conteudo_input import CONTEUDO_INPUT
 from config.sistema_input import SISTEMA_INPUT
 import json
 from openai import OpenAI
-import os
 import pandas as pd
 import utils
 
