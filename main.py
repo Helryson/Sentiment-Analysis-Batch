@@ -7,7 +7,7 @@ from sentiment_analysis import Analise_sentimento
 if __name__ == "__main__":
     load_dotenv('.env')
     API_KEY = os.getenv('API_KEY')
-    PATH_ENTRADA = "./dataset/twcs.csv"
+    PATH_ENTRADA = "Projetos/Datasets/twcs.csv"
     PATH_SAIDA = "./data"
     
     analisador = Analise_sentimento(API_KEY, PATH_ENTRADA)

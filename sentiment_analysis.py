@@ -9,17 +9,16 @@ import utils
 class Analise_sentimento:
 
     def __init__(self, API_KEY, path):
-        self.API_KEY = API_KEY
+        self.client = OpenAI(api_key=API_KEY)
         self.path = path
-        self.client, self.df = self.load_data()
+        self.df = self.load_data()
 
     def load_data(self) -> pd.DataFrame:
-        client = OpenAI(api_key=self.API_KEY)
         df = pd.read_csv(self.path)
         df.rename(columns={'text': 'chat_conversation'}, inplace=True)
         df = df.reset_index()
         df = df[:1000]
-        return client, df
+        return df
     
     def create_tasks_json(self, df: pd.DataFrame) -> list:
         sentiment_tasks = []
